@@ -1,6 +1,6 @@
 {
-  "name": "cesar-workspace",
-  "version": "0.0.0",
+  "name": "@cesarbr/angular-tooltip",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,7 +9,18 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
+  "license": "MIT",
+  "description": "An angular directive for showing tooltips over elements.",
+  "bugs": "https://github.com/CESARBR/angular-tooltip/issues",
+  "homepage": "https://github.com/CESARBR/angular-tooltip#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CESARBR/angular-tooltip"
+  },
+  "keywords": [
+    "angular",
+    "tooltip"
+  ],
   "dependencies": {
     "@angular/animations": "~8.2.14",
     "@angular/common": "~8.2.14",

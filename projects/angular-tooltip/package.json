@@ -1,6 +1,18 @@
 {
-  "name": "angular-tooltip",
+  "name": "@cesarbr/angular-tooltip",
   "version": "0.0.1",
+  "license": "MIT",
+  "description": "An angular directive for showing tooltips over elements.",
+  "bugs": "https://github.com/CESARBR/angular-tooltip/issues",
+  "homepage": "https://github.com/CESARBR/angular-tooltip#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CESARBR/angular-tooltip"
+  },
+  "keywords": [
+    "angular",
+    "tooltip"
+  ],
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14"

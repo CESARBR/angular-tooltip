@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, Input, ComponentFactoryResolver, EmbeddedViewRef, ApplicationRef, Injector, Output, EventEmitter, Inject, Optional } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input, ComponentFactoryResolver, EmbeddedViewRef, ApplicationRef, Injector, Output, EventEmitter, Inject, Optional, ViewChild } from '@angular/core';
 import { TooltipComponent } from './tooltip.component';
 
 export interface AdComponent {
@@ -22,6 +22,7 @@ export class TooltipDirective {
   @Input('tooltip-class') tooltipClass = '';
   @Input('offset') offset = 8;
   @Input('customWidth') customWidth: string;
+  @Input('wordBreak') wordBreak: string;
   @Input('showOnlyIfOverflowEllipsis') showOnlyIfOverflowEllipsis: boolean;
 
   get isTooltipDestroyed() {
@@ -46,7 +47,7 @@ export class TooltipDirective {
   @HostListener('mouseleave')
   onMouseLeave() {
     if (this.trigger === 'hover') {
-       this.destroyTooltip();
+      this.destroyTooltip();
     }
   }
 
@@ -105,7 +106,8 @@ export class TooltipDirective {
       elementPosition: this.elementPosition,
       placement: this.placement,
       offset: this.offset,
-      customWidth: this.customWidth
+      customWidth: this.customWidth,
+      workBreak: this.wordBreak
     };
 
     this.appRef.attachView(this.componentRef.hostView);

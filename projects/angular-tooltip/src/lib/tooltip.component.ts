@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, HostBinding, Input, EventEmitter, Renderer2} from '@angular/core';
+import { Component, ElementRef, HostBinding, Input, Renderer2} from '@angular/core';
 
 @Component({
   selector: 'tooltip',
@@ -9,8 +9,6 @@ import { Component, ElementRef, HostListener, HostBinding, Input, EventEmitter, 
   styleUrls: ['./tooltip.component.scss'],
 })
 export class TooltipComponent {
-  _show: boolean = false;
-
   @Input() data: any;
 
   @HostBinding('style.top') hostStyleTop: string;
@@ -22,32 +20,7 @@ export class TooltipComponent {
     if (show) {
       this.setPosition();
     }
-    this._show = show;
     this.hostClassShow = show;
-  }
-
-  get show(): boolean {
-    return this._show;
-  }
-
-  get placement() {
-    return this.data.placement;
-  }
-
-  get element() {
-    return this.data.element;
-  }
-
-  get elementPosition() {
-    return this.data.elementPosition;
-  }
-
-  get tooltipValue() {
-    return this.data.tooltipValue;
-  }
-
-  get tooltipOffset(): number {
-    return Number(this.data.offset);
   }
 
   constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
@@ -70,32 +43,28 @@ export class TooltipComponent {
 
     const tooltipHeight = tooltip.clientHeight;
     const tooltipWidth = tooltip.clientWidth;
-    const scrollY = window.pageYOffset;
+    const vertScroll = window.pageYOffset;
 
     let top, left;
 
     if (placement === 'top') {
-      top = this.elementPosition.top + scrollY - (tooltipHeight + this.tooltipOffset);
+      top = this.elementPosition.top + vertScroll - (tooltipHeight + this.tooltipOffset);
+      left = this.elementPosition.left + elementWidth / 2 - tooltipWidth / 2;
     }
 
     if (placement === 'bottom') {
-      top = this.elementPosition.top + scrollY + elementHeight + this.tooltipOffset;
-    }
-
-    if (placement === 'top' || placement === 'bottom') {
+      top = this.elementPosition.top + vertScroll + elementHeight + this.tooltipOffset;
       left = this.elementPosition.left + elementWidth / 2 - tooltipWidth / 2;
     }
 
     if (placement === 'left') {
+      top = this.elementPosition.top + vertScroll + elementHeight / 2 - tooltip.clientHeight / 2;
       left = this.elementPosition.left - tooltipWidth - this.tooltipOffset;
     }
 
     if (placement === 'right') {
+      top = this.elementPosition.top + vertScroll + elementHeight / 2 - tooltip.clientHeight / 2;
       left = this.elementPosition.left + elementWidth + this.tooltipOffset;
-    }
-
-    if (placement === 'left' || placement === 'right') {
-      top = this.elementPosition.top + scrollY + elementHeight / 2 - tooltip.clientHeight / 2;
     }
 
     this.hostStyleTop = top + 'px';
@@ -104,5 +73,25 @@ export class TooltipComponent {
 
   setCustomStyles() {
     this.hostStyleWidth = this.data.customWidth ? this.data.customWidth : '';
+  }
+
+  get placement() {
+    return this.data.placement;
+  }
+
+  get element() {
+    return this.data.element;
+  }
+
+  get elementPosition() {
+    return this.data.elementPosition;
+  }
+
+  get tooltipValue() {
+    return this.data.tooltipValue;
+  }
+
+  get tooltipOffset(): number {
+    return Number(this.data.offset);
   }
 }

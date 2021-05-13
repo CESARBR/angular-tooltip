@@ -21,6 +21,8 @@ export class TooltipDirective {
   @Input('trigger') trigger = 'hover';
   @Input('tooltip-class') tooltipClass = '';
   @Input('offset') offset = 8;
+  @Input('leftOffset') leftOffset = 0;
+  @Input('topOffset') topOffset = 0;
   @Input('customWidth') customWidth: string;
   @Input('wordBreak') wordBreak: string;
   @Input('showOnlyIfOverflowEllipsis') showOnlyIfOverflowEllipsis: boolean;
@@ -106,6 +108,8 @@ export class TooltipDirective {
       elementPosition: this.elementPosition,
       placement: this.placement,
       offset: this.offset,
+      leftOffset: this.leftOffset,
+      topOffset: this.topOffset,
       customWidth: this.customWidth,
       workBreak: this.wordBreak
     };

@@ -48,23 +48,23 @@ export class TooltipComponent {
     let top, left;
 
     if (placement === 'top') {
-      top = this.elementPosition.top + vertScroll - (tooltipHeight + this.tooltipOffset);
-      left = this.elementPosition.left + elementWidth / 2 - tooltipWidth / 2;
+      top = this.elementPosition.top + vertScroll - (tooltipHeight + this.tooltipOffset) + this.topOffset;
+      left = this.elementPosition.left + elementWidth / 2 - tooltipWidth / 2 + this.leftOffset;
     }
 
     if (placement === 'bottom') {
-      top = this.elementPosition.top + vertScroll + elementHeight + this.tooltipOffset;
-      left = this.elementPosition.left + elementWidth / 2 - tooltipWidth / 2;
+      top = this.elementPosition.top + vertScroll + elementHeight + this.tooltipOffset + this.topOffset;
+      left = this.elementPosition.left + elementWidth / 2 - tooltipWidth / 2 + this.leftOffset;
     }
 
     if (placement === 'left') {
-      top = this.elementPosition.top + vertScroll + elementHeight / 2 - tooltip.clientHeight / 2;
-      left = this.elementPosition.left - tooltipWidth - this.tooltipOffset;
+      top = this.elementPosition.top + vertScroll + elementHeight / 2 - tooltip.clientHeight / 2 + this.topOffset;
+      left = this.elementPosition.left - tooltipWidth - this.tooltipOffset + this.leftOffset;
     }
 
     if (placement === 'right') {
-      top = this.elementPosition.top + vertScroll + elementHeight / 2 - tooltip.clientHeight / 2;
-      left = this.elementPosition.left + elementWidth + this.tooltipOffset;
+      top = this.elementPosition.top + vertScroll + elementHeight / 2 - tooltip.clientHeight / 2 + this.topOffset;
+      left = this.elementPosition.left + elementWidth + this.tooltipOffset + this.leftOffset;
     }
 
     this.hostStyleTop = top + 'px';
@@ -93,5 +93,13 @@ export class TooltipComponent {
 
   get tooltipOffset(): number {
     return Number(this.data.offset);
+  }
+
+  get leftOffset(): number {
+    return Number(this.data.leftOffset);
+  }
+
+  get topOffset(): number {
+    return Number(this.data.topOffset);
   }
 }

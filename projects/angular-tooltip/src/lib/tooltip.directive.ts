@@ -41,6 +41,7 @@ export class TooltipDirective {
   @HostListener('focusin')
   @HostListener('mouseenter')
   onMouseEnter() {
+    if (!this.tooltipValue) return;
     if (this.showOnlyIfOverflowEllipsis && this.elementRef.nativeElement.offsetWidth >= this.elementRef.nativeElement.scrollWidth) return;
     this.show();
   }

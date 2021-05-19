@@ -111,7 +111,7 @@ export class TooltipDirective {
       leftOffset: this.leftOffset,
       topOffset: this.topOffset,
       customWidth: this.customWidth,
-      workBreak: this.wordBreak
+      wordBreak: this.wordBreak
     };
 
     this.appRef.attachView(this.componentRef.hostView);

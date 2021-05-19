@@ -14,6 +14,7 @@ export class TooltipComponent {
   @HostBinding('style.top') hostStyleTop: string;
   @HostBinding('style.left') hostStyleLeft: string;
   @HostBinding('style.width') hostStyleWidth: string;
+  @HostBinding('style.word-break') hostWordBreak: string;
   @HostBinding('class.tooltip-show') hostClassShow: boolean;
 
   @Input() set show(show: boolean) {
@@ -73,6 +74,9 @@ export class TooltipComponent {
 
   setCustomStyles() {
     this.hostStyleWidth = this.data.customWidth ? this.data.customWidth : '';
+    if (this.wordBreak) {
+      this.hostWordBreak = this.wordBreak;
+    }
   }
 
   get placement() {
@@ -101,5 +105,9 @@ export class TooltipComponent {
 
   get topOffset(): number {
     return Number(this.data.topOffset);
+  }
+
+  get wordBreak(): string {
+    return this.data.wordBreak;
   }
 }

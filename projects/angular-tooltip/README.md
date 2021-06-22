@@ -128,6 +128,7 @@ Usage example
     leftOffset="30"
     topOffset="23"
     wordBreak="Cut"
+    textAlign="right"
     showOnlyIfOverflowEllipsis="true">
     <button
     class="upload-button">Upload Documents</button>

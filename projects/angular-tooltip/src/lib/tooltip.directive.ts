@@ -25,6 +25,7 @@ export class TooltipDirective {
   @Input('topOffset') topOffset = 0;
   @Input('customWidth') customWidth: string;
   @Input('wordBreak') wordBreak: string;
+  @Input('textAlign') textAlign: string;
   @Input('showOnlyIfOverflowEllipsis') showOnlyIfOverflowEllipsis: boolean;
 
   get isTooltipDestroyed() {
@@ -112,7 +113,8 @@ export class TooltipDirective {
       leftOffset: this.leftOffset,
       topOffset: this.topOffset,
       customWidth: this.customWidth,
-      wordBreak: this.wordBreak
+      wordBreak: this.wordBreak,
+      textAlign: this.textAlign
     };
 
     this.appRef.attachView(this.componentRef.hostView);

@@ -15,6 +15,7 @@ export class TooltipComponent {
   @HostBinding('style.left') hostStyleLeft: string;
   @HostBinding('style.width') hostStyleWidth: string;
   @HostBinding('style.word-break') hostWordBreak: string;
+  @HostBinding('style.text-align') hostStyleTextAlign: string;
   @HostBinding('class.tooltip-show') hostClassShow: boolean;
 
   @Input() set show(show: boolean) {
@@ -77,6 +78,9 @@ export class TooltipComponent {
     if (this.wordBreak) {
       this.hostWordBreak = this.wordBreak;
     }
+    if (this.textAlign) {
+      this.hostStyleTextAlign = this.textAlign;
+    }
   }
 
   get placement() {
@@ -109,5 +113,9 @@ export class TooltipComponent {
 
   get wordBreak(): string {
     return this.data.wordBreak;
+  }
+
+  get textAlign(): string {
+    return this.data.textAlign;
   }
 }

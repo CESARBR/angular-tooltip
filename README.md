@@ -11,7 +11,7 @@
     <img src="tooltip.svg" alt="tooltip" width="100" height="100">
   </a>
 
-  <h3 align="center">Angular Drag and Drop</h3>
+  <h3 align="center">Angular Tooltip</h3>
 
   <p align="center">
     Tooltip directive adds a behavior to elements in your Angular applications where you can add a tooltip
@@ -126,6 +126,7 @@ Angular Tooltip has flags where you can customize your component:
 |Horizontal tooltip position, positive numbers will push it to the left, while negative numbers will push it to the right|`leftOffset`|`0`|`-99999...99999`|`number`|
 |Vertical tooltip position, positive numbers will push it down, while negative numbers will push it up.|`topOffset`|`0`|`-99999...99999`|`number`|
 |Allows for breaking lines withing the same word.|`wordBreak`|`none`|`Any string`|`string`|
+|Text Alignment.|`textAlign`|`none`|`Any string`|`string`|
 |Only shows the tooltip if the text is overflowed (not entirely showing up, with '...').|`showOnlyIfOverflowEllipsis`|`false`|`true/false`|`boolean`|
 
 Usage example
@@ -136,6 +137,7 @@ Usage example
     leftOffset="30"
     topOffset="23"
     wordBreak="Cut"
+    textAlign="right"
     showOnlyIfOverflowEllipsis="true">
     <button
     class="upload-button">Upload Documents</button>

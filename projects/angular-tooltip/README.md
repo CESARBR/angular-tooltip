@@ -143,7 +143,7 @@ Usage example
 See the [open issues](https://github.com/CESARBR/angular-tooltip/issues) for a list of proposed features (and known issues).
 
 ## Contributing
-You can set up a test enviroment by running the command npm run **build-dev** followed by **ng serve**, the build-dev command will build the tooltip in the dist folder and copy it to the test project node_modules folder for you, whenever you change something in the tooltip code, run the build-dev again and the test project will pick up the changes automatically.
+You can set up a test enviroment by running the command **npm run build-dev** followed by **ng serve**, the build-dev command will build the tooltip in the dist folder and copy it to the test project node_modules folder for you, whenever you change something in the tooltip code, run the build-dev again and the test project will pick up the changes automatically.
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 

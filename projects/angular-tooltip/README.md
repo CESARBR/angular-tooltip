@@ -8,7 +8,7 @@
 <br />
 <p align="center">
 
-  <h3 align="center">Angular Drag and Drop</h3>
+  <h3 align="center">Angular Tooltip</h3>
 
   <p align="center">
     Tooltip directive adds a behavior to elements in your Angular applications where you can add a tooltip
@@ -134,6 +134,9 @@ Usage example
     class="upload-button">Upload Documents</button>
 </div>
 ```
+
+## Contributing
+You can set up a test enviroment by running the command npm run build-dev followed by ng serve, the build-dev command will build the tooltip in the dist folder and copy it to the test project node_modules folder for you, whenever you change something in the tooltip code, run the build-dev again and the test project will pick up the changes automatically.
 
 ## Roadmap
 

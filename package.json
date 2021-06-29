@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build-test": "ng build angular-tooltip && npm run copy",
+    "build-dev": "ng build angular-tooltip && npm run copy",
     "copy": "npm run copyroot && npm run copybundles && npm run copyfesm2015 && npm run copylib",
     "copyroot": "copyfiles -u 1 dist/angular-tooltip/* node_modules/@cesarbr",
     "copybundles": "copyfiles -u 2 dist/angular-tooltip/bundles/* node_modules/@cesarbr/angular-tooltip",

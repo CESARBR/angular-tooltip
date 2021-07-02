@@ -134,10 +134,6 @@ Usage example
     class="upload-button">Upload Documents</button>
 </div>
 ```
-
-## Contributing
-
-
 ## Roadmap
 
 See the [open issues](https://github.com/CESARBR/angular-tooltip/issues) for a list of proposed features (and known issues).
